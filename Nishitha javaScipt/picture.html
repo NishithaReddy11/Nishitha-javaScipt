@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Document</title>
+       
+    </head>
+    <body>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <table border="1">
+            <tr align="center"><td colspan="2"><img src="img1.jpg" id="image" height="300px" width="400px"></td></tr>
+            <tr>
+                <td width="50%" align="center"> 
+                    <button type="button" id="p">Previous</button>
+                </td>
+                <td width="50%" align="center"> 
+                    <button type="button" id="n">Next</button>
+                </td>
+            </tr>
+
+        </table>
+        
+        
+      
+        <script>
+        
+        // var img=$("#image");
+        var imgs=["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"];
+        var counter=0;
+            $(document).ready(
+                function()
+                {
+                    $("#p").click(
+                        function()
+                        {
+                            previous();
+                        }
+                    );
+                }
+            );
+            $(document).ready(
+                function()
+                {
+                    $("#n").click(
+                        function()
+                        {
+                            next();
+                        }
+                    );
+                }
+            );
+function next()
+{
+    if(counter==imgs.length-1)
+    {
+        counter=-1;
+    }
+    counter++;
+    $("#image").attr("src",imgs[counter]);
+}
+function previous()
+{
+    if(counter==0)
+    {
+        counter=imgs.length;
+    }
+    counter--;
+    $("#image").attr("src",imgs[counter]);
+}
+
+
+        
+        </script>
+    </body>
+</html>
